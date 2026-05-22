@@ -97,11 +97,12 @@ default_origins = [
     "http://127.0.0.1:3001",
 ]
 allow_origins = settings.cors_origin_list or default_origins
+_render_origin = r"^https://[a-z0-9-]+\.onrender\.com$"
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allow_origins,
-    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1):\d+",
+    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1):\d+|https://[a-z0-9-]+\.onrender\.com",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -110,6 +111,8 @@ app.add_middleware(
 
 def _origin_allowed(origin: str) -> bool:
     if origin in allow_origins:
+        return True
+    if re.match(_render_origin, origin):
         return True
     return bool(re.match(r"^https?://(localhost|127\.0\.0\.1):\d+$", origin))
 
