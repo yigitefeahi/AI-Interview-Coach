@@ -255,29 +255,29 @@ function PresenceInterviewPageContent() {
 
   const applyResponse = useCallback(
     async (data: SubmitResponse) => {
-      const qc = typeof data.question_context === "string" ? data.question_context.trim() : "";
-      if (qc) {
-        setSessionQuestionContext(qc);
-      }
+    const qc = typeof data.question_context === "string" ? data.question_context.trim() : "";
+    if (qc) {
+      setSessionQuestionContext(qc);
+    }
 
-      setFeedback(safeText(data.feedback, "Feedback unavailable."));
-      setScore(data.score ?? null);
+    setFeedback(safeText(data.feedback, "Feedback unavailable."));
+    setScore(data.score ?? null);
       setHasEvaluation(true);
       setReviewOpen(true);
-      setScoreExplanation(safeText(data.score_explanation));
+    setScoreExplanation(safeText(data.score_explanation));
       setStrengths(Array.isArray(data.strengths) ? data.strengths.map((x) => safeText(x)) : []);
       setWeaknesses(Array.isArray(data.weaknesses) ? data.weaknesses.map((x) => safeText(x)) : []);
       setSuggestions(Array.isArray(data.suggestions) ? data.suggestions.map((x) => safeText(x)) : []);
-      setCanRetry(Boolean(data.can_retry));
-      setAttemptsLeft(Number(data.attempts_left || 0));
-      setPendingNextQuestion(
+    setCanRetry(Boolean(data.can_retry));
+    setAttemptsLeft(Number(data.attempts_left || 0));
+    setPendingNextQuestion(
         data.pending_next_question != null ? safeText(data.pending_next_question) : null
       );
       setConfidenceScore(typeof data.confidence_score === "number" ? data.confidence_score : null);
       setRedFlags(Array.isArray(data.red_flags) ? data.red_flags.map((x) => safeText(x)) : []);
-      setPassesLeft(typeof data.passes_left === "number" ? data.passes_left : passesLeft);
-      setQuestionIndex(typeof data.question_index === "number" ? data.question_index : questionIndex);
-      setTotalQuestions(typeof data.total_questions === "number" ? data.total_questions : totalQuestions);
+    setPassesLeft(typeof data.passes_left === "number" ? data.passes_left : passesLeft);
+    setQuestionIndex(typeof data.question_index === "number" ? data.question_index : questionIndex);
+    setTotalQuestions(typeof data.total_questions === "number" ? data.total_questions : totalQuestions);
 
       const qr =
         typeof data.question_rationale === "string" ? data.question_rationale.trim() : "";
@@ -285,9 +285,9 @@ function PresenceInterviewPageContent() {
         setQuestionRationale(qr);
       }
 
-      if (data.done) {
+    if (data.done) {
         await speakInterviewer("Great work. This session is complete. Opening your results now.");
-        router.push(`/results/${sessionId}`);
+      router.push(`/results/${sessionId}`);
         return;
       }
 
@@ -370,7 +370,15 @@ function PresenceInterviewPageContent() {
     setJoinedToast(true);
     window.setTimeout(() => setJoinedToast(false), 3200);
 
-    await runOpeningTurn();
+    try {
+      await runOpeningTurn();
+    } catch (error) {
+      console.error("Opening turn error:", error);
+      setMicError(
+        error instanceof Error ? error.message : "Interviewer could not continue. Try Replay question."
+      );
+      setPhase("idle");
+    }
   }, [conversationStarted, runOpeningTurn]);
 
   useEffect(() => {
@@ -534,8 +542,8 @@ function PresenceInterviewPageContent() {
             </button>
           )}
           <Link href="/dashboard" className="hidden rounded-full bg-white/8 px-2.5 py-1 text-slate-300 hover:bg-white/12 sm:inline">
-            Dashboard
-          </Link>
+              Dashboard
+            </Link>
         </div>
       </header>
 
@@ -570,8 +578,8 @@ function PresenceInterviewPageContent() {
                   Speaking
                 </span>
               )}
-            </div>
           </div>
+        </div>
 
           <PresenceSelfView
             videoRef={videoRef}
@@ -634,15 +642,15 @@ function PresenceInterviewPageContent() {
               <div className="rounded-2xl border border-violet-400/25 bg-[#141414]/95 px-6 py-4 text-center">
                 <p className="text-sm font-medium text-violet-100">Evaluating your answer…</p>
                 <p className="mt-1 text-xs text-slate-400">Coach feedback will appear shortly</p>
-              </div>
-            </div>
-          )}
+                    </div>
+                  </div>
+                )}
 
           {joinedToast && (
             <div className="absolute left-1/2 top-4 z-30 -translate-x-1/2 rounded-full border border-emerald-400/30 bg-emerald-500/15 px-4 py-2 text-sm text-emerald-100">
               {INTERVIEWER_NAME} joined the room
-            </div>
-          )}
+                  </div>
+                )}
 
           {passNotice && (
             <div className="absolute left-4 right-4 top-16 z-30 flex items-start gap-3 rounded-xl border border-amber-400/35 bg-amber-500/15 px-4 py-3 text-sm text-amber-50 sm:left-6 sm:right-auto sm:max-w-sm">
@@ -650,30 +658,30 @@ function PresenceInterviewPageContent() {
               <div>
                 <div className="font-semibold text-amber-100">Question skipped</div>
                 <p className="mt-1 text-amber-100/90">Pass recorded.</p>
-              </div>
-            </div>
-          )}
+                    </div>
+                  </div>
+                )}
 
           {analysisSuccess && !reviewOpen && (
             <div className="absolute bottom-28 left-1/2 z-30 flex -translate-x-1/2 items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/15 px-4 py-2 text-sm text-emerald-50">
               <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-400" aria-hidden />
               <span>Answer evaluated</span>
-              <button
-                type="button"
+                    <button
+                      type="button"
                 className="ml-1 underline underline-offset-2"
                 onClick={() => setReviewOpen(true)}
               >
                 View feedback
-              </button>
-            </div>
+                    </button>
+                  </div>
           )}
 
           {micError && (
             <div className="absolute left-4 right-4 top-16 z-30 rounded-xl border border-amber-400/30 bg-amber-500/15 px-4 py-3 text-sm text-amber-100 sm:left-6 sm:max-w-md">
               {micError}
-            </div>
-          )}
-        </div>
+                    </div>
+                  )}
+                </div>
       </div>
 
       <div
@@ -715,64 +723,64 @@ function PresenceInterviewPageContent() {
               spellCheck
             />
             <div className="mt-3 flex gap-3">
-              <button
-                type="button"
+                  <button
+                    type="button"
                 className="inline-flex items-center gap-2 rounded-xl bg-[#0b5cff] px-4 py-2.5 text-sm font-semibold text-white hover:bg-[#0a4fe0] disabled:opacity-50"
                 disabled={loading || !manualAnswer.trim()}
                 onClick={() => void handleManualSubmit()}
-              >
-                <Send size={16} />
+                  >
+                    <Send size={16} />
                 Submit typed answer
-              </button>
-              <button
-                type="button"
+                  </button>
+                  <button
+                    type="button"
                 className="rounded-xl border border-white/15 px-4 py-2.5 text-sm text-slate-300 hover:bg-white/5"
                 onClick={() => setShowManualInput(false)}
-              >
+                  >
                 Cancel
-              </button>
+                  </button>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
       )}
 
       <PresenceReviewDrawer
         open={reviewOpen}
         onClose={() => setReviewOpen(false)}
-        mode={MODE}
-        score={score}
-        confidenceScore={confidenceScore}
-        feedback={feedback}
-        scoreExplanation={scoreExplanation}
-        canRetry={canRetry}
-        attemptsLeft={attemptsLeft}
-        pendingNextQuestion={pendingNextQuestion}
-        isSpeaking={isSpeaking}
-        strengths={strengths}
-        weaknesses={weaknesses}
-        suggestions={suggestions}
-        redFlags={redFlags}
-        onReplayVoice={() => {
+            mode={MODE}
+            score={score}
+            confidenceScore={confidenceScore}
+            feedback={feedback}
+            scoreExplanation={scoreExplanation}
+            canRetry={canRetry}
+            attemptsLeft={attemptsLeft}
+            pendingNextQuestion={pendingNextQuestion}
+            isSpeaking={isSpeaking}
+            strengths={strengths}
+            weaknesses={weaknesses}
+            suggestions={suggestions}
+            redFlags={redFlags}
+            onReplayVoice={() => {
           void speakInterviewer(feedback);
-        }}
-        onContinueNextQuestion={() => {
-          if (!pendingNextQuestion) return;
+            }}
+            onContinueNextQuestion={() => {
+              if (!pendingNextQuestion) return;
           setReviewOpen(false);
           stopListening();
-          setCurrentQuestion(pendingNextQuestion);
-          setPendingNextQuestion(null);
-          setCanRetry(false);
-          setAttemptsLeft(0);
+              setCurrentQuestion(pendingNextQuestion);
+              setPendingNextQuestion(null);
+              setCanRetry(false);
+              setAttemptsLeft(0);
           setManualAnswer("");
           setLiveTranscript("");
-          setAnalysisSuccess(false);
-          setPassNotice(false);
+              setAnalysisSuccess(false);
+              setPassNotice(false);
           void (async () => {
             await speakInterviewer(pendingNextQuestion);
             startListening();
           })();
-        }}
-      />
+            }}
+          />
     </main>
   );
 }

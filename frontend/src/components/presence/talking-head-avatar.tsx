@@ -54,8 +54,13 @@ export const TalkingHeadAvatar = forwardRef<TalkingHeadAvatarHandle, TalkingHead
     const containerRef = useRef<HTMLDivElement | null>(null);
     const headRef = useRef<TalkingHeadInternal | null>(null);
     const readyRef = useRef(false);
+    const onReadyRef = useRef(onReady);
+    const onErrorRef = useRef(onError);
     const [loading, setLoading] = useState(true);
     const [loadError, setLoadError] = useState<string | null>(null);
+
+    onReadyRef.current = onReady;
+    onErrorRef.current = onError;
 
     useEffect(() => {
       let cancelled = false;
@@ -104,13 +109,13 @@ export const TalkingHeadAvatar = forwardRef<TalkingHeadAvatarHandle, TalkingHead
 
           readyRef.current = true;
           setLoading(false);
-          onReady?.();
+          onReadyRef.current?.();
         } catch (error) {
           const message =
             error instanceof Error ? error.message : "Failed to load 3D interviewer avatar.";
           setLoadError(message);
           setLoading(false);
-          onError?.(message);
+          onErrorRef.current?.(message);
         }
       };
 
@@ -127,7 +132,7 @@ export const TalkingHeadAvatar = forwardRef<TalkingHeadAvatarHandle, TalkingHead
         }
         headRef.current = null;
       };
-    }, [onError, onReady]);
+    }, []);
 
     const speakWithAvatar = async (text: string) => {
       const head = headRef.current;
