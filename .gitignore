@@ -1,0 +1,39 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Python (backend)
+backend/.env
+backend/.venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/test.db
+backend/ci_test.db
+backend/_alembic_gen.db
+backend/chroma/
+backend/.mypy_cache/
+backend/.pytest_cache/
+backend/data/audit.log
+
+# Node (frontend)
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env*
+!frontend/.env.example
+
+# IDE / logs
+*.log
+.idea/
+.vscode/
+*.tsbuildinfo
+
+# Playwright
+frontend/test-results/
+frontend/playwright-report/
+frontend/blob-report/
+
+# Docker / local
+*.pem
+*.key
