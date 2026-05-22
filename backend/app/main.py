@@ -193,13 +193,14 @@ def _client_key(request: Request, user_id: Optional[int] = None, prefix: str = "
 
 
 def _attach_auth_cookie(response: JSONResponse, token: str) -> JSONResponse:
+    secure = settings.auth_cookie_secure
     response.set_cookie(
         key="access_token",
         value=token,
         httponly=True,
         max_age=settings.jwt_expires_minutes * 60,
-        samesite="lax",
-        secure=settings.auth_cookie_secure,
+        samesite="none" if secure else "lax",
+        secure=secure,
         path="/",
     )
     return response
