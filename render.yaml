@@ -2,7 +2,7 @@ services:
   - type: web
     name: ai-coach-backend
     runtime: python
-    plan: starter
+    plan: free
     rootDir: backend
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
@@ -34,7 +34,7 @@ services:
   - type: web
     name: ai-coach-frontend
     runtime: node
-    plan: starter
+    plan: free
     rootDir: frontend
     buildCommand: npm ci && npm run build
     startCommand: npm run start -- -p $PORT -H 0.0.0.0
@@ -44,4 +44,4 @@ services:
 
 databases:
   - name: ai-coach-db
-    plan: starter
+    plan: free
