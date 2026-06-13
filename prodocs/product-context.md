@@ -40,4 +40,4 @@ CV ve hedef role göre kişiselleştirilmiş, AI destekli mülakat simülasyonu 
 
 ## Detaylı PRD
 
-Tam ürün dokümanı: `upschool301prdmvpdocument.md` (kök dizin)
+Tam ürün dokümanı: `PRD.md` (kök dizin)

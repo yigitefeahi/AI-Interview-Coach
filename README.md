@@ -36,9 +36,12 @@ Monorepo: **FastAPI** backend and **Next.js** frontend for mock interviews, scor
 |------|------|
 | `frontend/` | Next.js + React + TypeScript web UI (App Router) |
 | `backend/` | FastAPI API, auth, interview engine, RAG, rate limits |
-| `aicoachapp.plan.md` | Yol haritasi ve teknik plan |
-| `Jiraiçinplanlama.md` | Epic/Story/Task kirilimi |
-| `upschool301prdmvpdocument.md` | PRD dokumani |
+| `PRD.md` | Ürün gereksinim dokümanı |
+| `Plan.md` | Kullanıcı hikayeleri ve teknik plan |
+| `tech-stack.md` | Teknoloji yığını ve AI kullanımı |
+| `DesignSystem.md` | UI tasarım kuralları |
+| `Progress.md` | Geliştirme günlüğü |
+| `prodocs/` | AI ajan referans dosyaları |
 | `DEPLOYMENT.md` | Deployment notes |
 | `docs/OPERATIONS.md` | Operations checklist |
 

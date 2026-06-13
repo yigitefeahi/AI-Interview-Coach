@@ -102,7 +102,7 @@ Geliştirme sürecinde alınan kararlar, tamamlanan işler ve karşılaşılan s
 | Konu | Durum | Not |
 |------|-------|-----|
 | Chroma persist on Render free disk | İzleniyor | KB ingest deploy sonrası job |
-| `plan.md` todo statüleri | Güncellenecek | Progress.md ile senkron |
+| `Plan.md` todo statüleri | Tamamlandı | Progress.md ile senkron (2026-06-13) |
 | CI workflow | Eklenebilir | README'de referans var |
 
 ---
