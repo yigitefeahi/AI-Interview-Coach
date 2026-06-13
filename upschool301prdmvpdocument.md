@@ -1,0 +1,150 @@
+# PRD - AI Interview Coach
+
+## 1. Product Overview
+
+- **Product Name:** AI Interview Coach
+- **Vision:** Gercek mulakat deneyimini birebir simule eden, adaylarin hem teknik hem iletisim becerilerini analiz ederek onlari ise girme seviyesine getiren AI destekli bir koc platformu.
+
+## 2. Problem
+
+Gunumuzde is arayan adaylar mulakat sureclerinde ciddi zorluklar yasamaktadir:
+
+- Gercekci mulakat pratigi yapabilecekleri ortam eksikligi
+- Kisisel ve detayli geri bildirim alamama
+- Performanslarini objektif olarak olcememe
+- Stres altinda etkili iletisim kuramama
+- Mulakatlarda ne bekleyeceklerini bilememe
+
+## 3. Solution
+
+AI Interview Coach, adaylara kisisellestirilmis ve gercekci bir mulakat deneyimi sunar:
+
+- CV ve hedef role gore dinamik mulakat olusturma
+- Gercek zamanli mulakat simulasyonu
+- Ses ve video uzerinden performans analizi
+- Icerik, iletisim ve ozguven odakli geri bildirim
+- Gelisim odakli oneriler ve tekrar deneme imkani
+
+## 4. Target Users
+
+- Junior developer'lar
+- Yeni mezunlar
+- Global job market'e girmek isteyen adaylar
+- Ingilizce mulakat pratigi yapmak isteyen kullanicilar
+
+## 5. Value Proposition
+
+> "Gercek mulakatin provasini yap ve nerede elenecegini ogren."
+
+## 6. MVP Scope
+
+**Amac:** Kullaniciya gercekci, kisisellestirilmis ve analiz edilebilir bir mulakat deneyimi sunmak.
+
+### MVP Features
+
+1. **CV Analysis**
+   - PDF formatinda CV upload
+   - AI ile icerik parsing
+   - Aday profili cikarimi
+   - Amac: Mulakati tamamen kullaniciya ozel hale getirmek
+
+2. **Dynamic Interview Engine**
+   - CV'ye gore soru uretimi
+   - Role-based soru uretimi
+   - Follow-up (takip) sorulari
+   - Amac: Gercek mulakat akisinin simule edilmesi
+
+3. **Voice Interview**
+   - Kullanicinin sesli cevap vermesi
+   - Speech-to-text donusumu
+   - Akicilik ve konusma analizi
+   - Amac: Adayin gercek mulakat ortamina hazirlanmasi
+
+4. **Video Interview (Basic)**
+   - Kamera ile kayit
+   - Yuz ve goz temasi analizi
+   - Temel confidence (ozguven) tahmini
+   - Amac: Non-verbal iletisim becerilerini analiz etmek
+
+5. **AI Feedback Engine**
+   - Her cevap icin content feedback (ne soyledigi)
+   - Communication feedback (nasil soyledigi)
+   - Confidence feedback (ozguven analizi)
+   - Amac: Cok yonlu ve aksiyon alinabilir geri bildirim sunmak
+
+6. **Scoring System**
+   - Answer score
+   - Communication score
+   - Overall interview score
+   - Amac: Mulakat performansini objektif ve karsilastirilabilir hale getirmek
+
+7. **Retry & Improvement**
+   - Kullanicinin tekrar cevap verme imkani
+   - AI tarafindan iyilestirme onerileri
+   - Amac: Ogrenme ve gelisim dongusu olusturmak
+
+## 7. User Flow
+
+- Kullanici platforma giris yapar
+- CV'sini yukler
+- Hedef rolu secer
+- Kamera ve mikrofon erisimi verir
+- AI mulakati baslatir
+- Kullanici sorulara sesli cevap verir
+- AI follow-up sorular sorar
+- Mulakat tamamlanir
+- Kullanici detayli analiz ve skorlari goruntuler
+
+### User Scenario (Example)
+
+Kullanici platforma giris yapar ve CV'sini yukler. "Frontend Developer" rolunu secer.  
+AI, CV'ye gore kisisellestirilmis sorular uretir.  
+Kullanici sorulara sesli olarak cevap verirken kamera aciktir.  
+AI, hem cevabin icerigini hem de konusma tarzini analiz eder.  
+Mulakat sonunda kullanici:
+
+- Guclu ve zayif yonlerini
+- Nasil daha iyi cevap verebilecegini
+- Genel performans skorunu
+
+detayli sekilde gorur.
+
+## 8. Tech Approach
+
+- Web tabanli responsive uygulama
+- AI entegrasyonu:
+  - CV parsing
+  - Question generation
+  - Feedback generation
+- Voice processing:
+  - Speech-to-text
+- Video processing:
+  - Basic facial and attention analysis
+
+## 9. Success Metrics
+
+- Tamamlanan mulakat sayisi
+- Ortalama mulakat suresi
+- Retry rate (tekrar deneme orani)
+- Feedback engagement (geri bildirim etkilesimi)
+
+## 10. Future Scope
+
+- Sirket bazli mulakat simulasyonlari (Google, Amazon vb.)
+- Gercek zamanli AI interviewer avatar
+- Detayli gelisim dashboard'u
+- Kullanici ilerleme takibi
+
+## 11. Differentiation
+
+AI Interview Coach'u mevcut cozumlerden ayiran ozellikler:
+
+- CV'ye tam entegre kisisellestirilmis mulakat deneyimi
+- Sadece icerik degil, iletisim ve davranis analizi
+- Follow-up sorular ile gercek mulakat akisi
+- Multimodal analiz (text + voice + video)
+- Brutally honest ve aksiyon alinabilir geri bildirim
+
+## Final Pitch
+
+AI Interview Coach, adaylarin yalnizca ne soylediklerini degil, nasil soylediklerini de analiz ederek gercek mulakat performanslarini olcen, gelistiren ve ise girme ihtimallerini artiran bir platformdur.
