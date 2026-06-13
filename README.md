@@ -1,8 +1,21 @@
-# AI Coach App
+# AI Interview Coach
 
-AI Coach App, CV ve hedef role gore yapay zeka destekli mulakat simulasyonu sunan bir full-stack mulakat pratik uygulamasidir.
+CV ve hedef role gore yapay zeka destekli mulakat simulasyonu sunan full-stack web uygulamasi.
 
-Monorepo: **FastAPI** backend and **Next.js** frontend for mock interviews, scoring, and coaching.
+**Canli uygulama:** https://ai-coach-frontend-bouv.onrender.com  
+**API:** https://ai-coach-backend-4ph0.onrender.com  
+**API docs:** https://ai-coach-backend-4ph0.onrender.com/docs
+
+Monorepo: **FastAPI** backend + **Next.js** frontend — mock interview, skorlama ve AI kocluk.
+
+## Deploy (Render)
+
+1. Repoyu GitHub'a bagla, Render'da **Blueprint** ile `render.yaml` deploy et.
+2. Backend env: `OPENAI_API_KEY`, `CORS_ORIGINS=https://ai-coach-frontend-bouv.onrender.com`
+3. Frontend env: `NEXT_PUBLIC_API_BASE=https://ai-coach-backend-4ph0.onrender.com`
+4. Her iki servisi redeploy et; `GET /health` → `{"ok":true}` kontrol et.
+
+Detay: `DEPLOYMENT.md`
 
 ## Screenshots
 

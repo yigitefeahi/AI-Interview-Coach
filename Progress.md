@@ -91,7 +91,7 @@ Geliştirme sürecinde alınan kararlar, tamamlanan işler ve karşılaşılan s
 - Dokümanlar repo kökünde standart isimlerle toplanacak.
 
 ### Devam eden / teslim öncesi
-- [ ] Canlı Render deploy'unun uçtan uca testi
+- [x] Canlı Render deploy (frontend + backend uçtan uca)
 - [ ] Demo videosu
 - [ ] Teslim formu
 

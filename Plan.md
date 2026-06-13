@@ -98,7 +98,7 @@ Kullanıcının CV'si ve hedef rolüne göre gerçekçi bir mülakat simülasyon
 
 | User Story | Teknik adımlar | Durum |
 |------------|----------------|-------|
-| Uygulama canlıda çalışsın | Render blueprint, env ayarları, health check | 🔄 Devam ediyor |
+| Uygulama canlıda çalışsın | Render blueprint, env ayarları, health check | ✅ Tamamlandı |
 | Teslim dokümanları tam olsun | PRD, Plan, tech-stack, Progress, prodocs | ✅ Tamamlandı |
 | Demo videosu hazır olsun | Loom/YouTube kayıt | ⏳ Bekliyor |
 
@@ -124,7 +124,7 @@ Kullanıcının CV'si ve hedef rolüne göre gerçekçi bir mülakat simülasyon
 | Faz 3 | Dinamik mülakat motoru | ✅ |
 | Faz 4 | Ses ve video pipeline | ✅ |
 | Faz 5 | Feedback ve skorlama | ✅ |
-| Faz 6 | Retry, analitik, release | 🔄 (canlı deploy + demo) |
+| Faz 6 | Retry, analitik, release | ✅ (canlı deploy tamam; demo + form bekliyor) |
 
 ---
 
@@ -136,7 +136,9 @@ Kullanıcının CV'si ve hedef rolüne göre gerçekçi bir mülakat simülasyon
 - [x] Video/ses sinyalleri temel feedback'e dahil ediliyor
 - [x] Kullanıcı skorlarını ve iyileştirme önerilerini görüyor
 - [x] Retry sonrası güncel performans farkı gösteriliyor
-- [ ] Canlı URL'de uçtan uca akış çalışıyor
+- [x] Canlı URL'de uçtan uca akış çalışıyor
+  - Frontend: https://ai-coach-frontend-bouv.onrender.com
+  - Backend: https://ai-coach-backend-4ph0.onrender.com
 
 ---
 
