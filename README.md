@@ -8,27 +8,27 @@ Monorepo: **FastAPI** backend and **Next.js** frontend for mock interviews, scor
 
 ### Home
 
-![AI Coach home screen](docs/screenshots/home.jpeg)
+![AI Coach home screen](screenshots/EkranResmi.jpeg)
 
 ### Dashboard
 
-![AI Coach dashboard](docs/screenshots/dashboard.jpeg)
+![AI Coach dashboard](screenshots/EkranResmi2.jpeg)
 
 ### Practice Hub
 
-![AI Coach practice hub](docs/screenshots/practice-hub.jpeg)
+![AI Coach practice hub](screenshots/EkranResmi3.jpeg)
 
 ### Interview Setup
 
-![AI Coach interview setup](docs/screenshots/interview-setup.jpeg)
+![AI Coach interview setup](screenshots/EkranResmi4.jpeg)
 
 ### Roadmap
 
-![AI Coach roadmap](docs/screenshots/roadmap.jpeg)
+![AI Coach roadmap](screenshots/EkranResmi5.jpeg)
 
 ### Settings
 
-![AI Coach settings](docs/screenshots/settings.jpeg)
+![AI Coach settings](screenshots/EkranResmi6.jpeg)
 
 ## Project Structure
 
